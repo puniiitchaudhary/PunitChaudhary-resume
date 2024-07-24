@@ -4,68 +4,190 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Punit Chaudhary - Resume</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .contact-info, .education, .work-experience, .skills, .internships, .certificates, .languages {
+            margin-top: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 5px;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .toggle-section {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Punit Chaudhary</h1>
-            <div class="contact-info">
-                <p>Email: <a href="mailto:punitpatelchaudhary517@gmail.com">punitpatelchaudhary517@gmail.com</a></p>
-                <p>Phone: 6386202185</p>
-                <p>Location: Lucknow, India</p>
-            </div>
-        </header>
-        <section class="section">
-            <h2>Objective</h2>
+    <h1>Punit Chaudhary</h1>
+    <div class="contact-info">
+        <p>Email: <a href="mailto:punitpatelchaudhary517@gmail.com">punitpatelchaudhary517@gmail.com</a></p>
+        <p>Phone: 6386202185</p>
+        <p>Location: Lucknow, India</p>
+        <button id="contactBtn">More Contact Info</button>
+    </div>
+
+    <div class="section">
+        <h2 class="toggle-section">Objective</h2>
+        <div class="content">
             <p>Secure a responsible career opportunity with a reputable company to incorporate my training and skills, while making a significant contribution to the success of the company.</p>
-        </section>
-        <section class="section">
-            <h2>Education</h2>
+        </div>
+    </div>
+
+    <div class="section education">
+        <h2 class="toggle-section">Education</h2>
+        <div class="content">
             <ul>
                 <li><strong>Bachelor Of Technology</strong>, Shri Ramswaroop Memorial College of Engineering and Management, Lucknow (08/2019 - Present), 65.8%</li>
                 <li><strong>Intermediate</strong>, New Standard Public School (04/2017 - 03/2018), 82%</li>
                 <li><strong>High School</strong>, New Standard Public School (04/2015 - 06/2016), 88%</li>
             </ul>
-        </section>
-        <section class="section">
-            <h2>Work Experience</h2>
+        </div>
+    </div>
+
+    <div class="section work-experience">
+        <h2 class="toggle-section">Work Experience</h2>
+        <div class="content">
             <ul>
                 <li><strong>Gym Website</strong> - Basics of web development with CSS and HTML</li>
                 <li><strong>Chat Bot Assistant</strong> - Online Restaurant Reservation System</li>
             </ul>
-        </section>
-        <section class="section">
-            <h2>Skills</h2>
+        </div>
+    </div>
+
+    <div class="section skills">
+        <h2 class="toggle-section">Skills</h2>
+        <div class="content">
             <ul>
                 <li>Core Java</li>
                 <li>CSS</li>
                 <li>C++</li>
                 <li>Python</li>
             </ul>
-        </section>
-        <section class="section">
-            <h2>Internships</h2>
+        </div>
+    </div>
+
+    <div class="section internships">
+        <h2 class="toggle-section">Internships</h2>
+        <div class="content">
             <ul>
-                <li><strong>Python for Data Science</strong> (07/2020 - 08/2020)</li>
+                <li><strong>JavaScript for Data Science</strong> (07/2020 - 08/2020)</li>
                 <li><strong>Cloud Computing</strong> (09/2021 - 10/2021)</li>
             </ul>
-        </section>
-        <section class="section">
-            <h2>Certificates</h2>
+        </div>
+    </div>
+
+    <div class="section certificates">
+        <h2 class="toggle-section">Certificates</h2>
+        <div class="content">
             <ul>
-                <li>Certified from IBM in Python for Data Science (07/2020 - 08/2020)</li>
+                <li>Certified from IBM in JavaScript data Science (07/2020 - 08/2020)</li>
                 <li>Certified from PNS Automation in C Programming Language (06/2022 - 08/2022)</li>
             </ul>
-        </section>
-        <section class="section">
-            <h2>Languages</h2>
+        </div>
+    </div>
+
+    <div class="section languages">
+        <h2 class="toggle-section">Languages</h2>
+        <div class="content">
             <ul>
                 <li>English - Full Professional Proficiency</li>
                 <li>Hindi - Full Professional Proficiency</li>
             </ul>
-        </section>
+        </div>
     </div>
-    <script src="script.js"></script>
+
+    <!-- Modal for More Contact Info -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Email: punitpatelchaudhary517@gmail.com</p>
+            <p>Phone: 6386202185</p>
+            <p>Location: Lucknow, India</p>
+        </div>
+    </div>
+
+    <script>
+        // Modal functionality
+        var modal = document.getElementById("contactModal");
+        var btn = document.getElementById("contactBtn");
+        var span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Toggle sections
+        var sections = document.querySelectorAll('.toggle-section');
+        sections.forEach(section => {
+            section.addEventListener('click', () => {
+                var content = section.nextElementSibling;
+                content.style.display = content.style.display === "none" ? "block" : "none";
+            });
+        });
+
+        // Initially hide all content sections
+        var contents = document.querySelectorAll('.content');
+        contents.forEach(content => content.style.display = "none");
+    </script>
 </body>
 </html>
+
+
